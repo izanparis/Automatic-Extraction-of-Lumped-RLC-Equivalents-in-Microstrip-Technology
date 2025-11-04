@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: tfg-v0
+Version: 0.1.0
+Summary: Herramienta para extraer equivalentes RLC de microstrip a partir de S-parámetros
+Author: Izan París Marcos
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: scikit-rf>=0.30
+Requires-Dist: numpy>=1.26
+Requires-Dist: scipy>=1.11
+Requires-Dist: matplotlib>=3.8
+Requires-Dist: pandas>=2.2
+Requires-Dist: typer[all]>=0.12
+Requires-Dist: rich>=13.7
+Requires-Dist: pydantic>=2.8
+Requires-Dist: omegaconf>=2.3
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: pyvisa>=1.13; platform_system != "Darwin"
+Dynamic: license-file
+
+
+# TFG — Microstrip → Equivalentes RLC
+
+Herramienta en Python para **obtener un equivalente concentrado RLC** a partir de **S-parámetros** (`.s2p`) de líneas/estructuras en microstrip. Incluye CLI, módulos, tests y base para control remoto de VNA (futuro).
+
+## Requisitos
+- Python ≥ 3.10
+- (Opcional) Git y VS Code
+
+## Uso rápido
+```bash
+# 1) Crear entorno
+python -m venv .venv
+# Windows:
+.\.venv\Scripts\activate
+# Linux/Mac:
+# source .venv/bin/activate
+
+# 2) Instalar
+pip install -U pip
+pip install -e .
+pip install ruff black pytest
+
+# 3) Colocar .s2p en data/raw/
+# 4) Ejecutar ajuste
+python -m tfg_v0.cli fit data/raw/ejemplo.s2p --cfg config/base.yaml --out reports
+```
+
+## Estructura
+Ver `pyproject.toml`, `src/tfg_v0/*` y `config/base.yaml`.

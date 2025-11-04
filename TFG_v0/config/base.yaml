@@ -1,0 +1,19 @@
+
+paths:
+  data_raw: data/raw
+  data_interim: data/interim
+  data_processed: data/processed
+  reports: reports
+processing:
+  ref_frequency_hz: 2.45e9
+  window_band_hz: 200e6
+model:
+  rlc_topology: series
+  initial:
+    R: 10.0
+    L: 1.0e-9
+    C: 1.0e-12
+instruments:
+  vna:
+    resource: "TCPIP0::192.168.0.50::inst0::INSTR"
+    timeout_ms: 5000

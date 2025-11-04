@@ -1,0 +1,38 @@
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tfg-v0"
+version = "0.1.0"
+description = "Herramienta para extraer equivalentes RLC de microstrip a partir de S-parámetros"
+authors = [{name = "Izan París Marcos"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "scikit-rf>=0.30",
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "matplotlib>=3.8",
+  "pandas>=2.2",
+  "typer[all]>=0.12",
+  "rich>=13.7",
+  "pydantic>=2.8",
+  "omegaconf>=2.3",
+  "pyyaml>=6.0",
+  "pyvisa>=1.13; platform_system != 'Darwin'",
+]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E203", "E266", "E501"]
+
+[tool.black]
+line-length = 100
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-q"
+pythonpath = ["src"]

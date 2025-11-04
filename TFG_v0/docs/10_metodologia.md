@@ -1,0 +1,3 @@
+# Metodología
+
+Descripción del pipeline.
